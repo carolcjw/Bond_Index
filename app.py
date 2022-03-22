@@ -11,7 +11,7 @@ def index():
         end = request.form.get("end")
         print(start, end)
         model1 = joblib.load("AR2")
-        pred1 = model1.predict([[start, end]])
+        pred1 = model1.predict([[start], [end]])
         str1 = "The prediction for US Bond Index using AR2 is : " + str(pred1)
         return(render_template("index.html", result1=str1))
     else:
